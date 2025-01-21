@@ -1,4 +1,27 @@
 # OHSU_ANKLE
 kinematics and Dynamics
 
-Install:
+Prerequisites
+Make sure you have the following installed before running the application:
+
+Python (Python version 3.6)
+
+Installation
+Clone the repository or download the source code:
+git clone https://github.com/TomCalde/exergamesMeta](https://github.com/paburgosc/OHSU_ANKLE.git
+cd OHSU_ANKLE
+
+Install dependencies:
+pip install -r requirements.txt
+
+
+Run the api:
+
+python readeurlercallable.py
+Running the Application
+
+Ensure the virtual environment is activated.
+
+Run the application:
+
+python main.py
