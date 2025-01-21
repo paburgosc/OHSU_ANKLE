@@ -8,20 +8,21 @@ Python (Python version 3.6)
 
 Installation
 Clone the repository or download the source code:
-git clone https://github.com/TomCalde/exergamesMeta](https://github.com/paburgosc/OHSU_ANKLE.git
-cd OHSU_ANKLE
+  git clone https://github.com/TomCalde/exergamesMeta](https://github.com/paburgosc/OHSU_ANKLE.git
+
+  cd OHSU_ANKLE
 
 Install dependencies:
-pip install -r requirements.txt
+  pip install -r requirements.txt
 
 
 Run the api:
 
-python readeurlercallable.py
+  python readeurlercallable.py
 Running the Application
 
 Ensure the virtual environment is activated.
 
 Run the application:
 
-python main.py
+  python main.py
