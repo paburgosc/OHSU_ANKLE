@@ -1,0 +1,6 @@
+pygame==1.9.6
+pyserial==3.5
+six==1.16.0
+metawear==0.7.0
+warble==1.1.0
+websocket-client==1.1.0
