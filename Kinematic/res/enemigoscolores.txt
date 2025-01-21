@@ -1,0 +1,6 @@
+azul = rojo con balas
+rojo = amarillo movil
+negro = celeste estatico
+celeste = final
+amarillo = ?
+verde = muros
