@@ -12,7 +12,7 @@ Clone the repository or download the source code:
    ```bash
 
 
-  git clone https://github.com/TomCalde/exergamesMeta](https://github.com/paburgosc/OHSU_ANKLE.git
+  git clone https://github.com/paburgosc/OHSU_ANKLE.git
    ```
    ```bash
   cd OHSU_ANKLE
