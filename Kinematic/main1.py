@@ -24,7 +24,7 @@ PORT = 65432        # The port used by the server
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # ~ s.setblocking(False)
-s.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 4096)
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 sleep(2)
 
 

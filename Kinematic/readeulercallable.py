@@ -18,11 +18,13 @@ print('mac_sensor3  = E3:A9:46:B7:FB:F3')
 
 
 name = input("ingresa el numero de sensor que quieres usar, ej. 7:")
-
+# ~ name = 1
 HOST = '127.0.0.1'  # The server's hostname or IP address
 PORT = 65432        # The port used by the server
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+
 s.bind((HOST, PORT))
 s.listen()
 clientsocket, address = s.accept()
@@ -151,7 +153,7 @@ def start_streaming(t):
 		# ~ libmetawear.mbl_mw_sensor_fusion_enable_data(s.device.board, SensorFusionData.QUATERNION);
 		libmetawear.mbl_mw_sensor_fusion_start(s.device.board)
 
-		sleep(0.001)#0.001#0.005
+		sleep(0.001)#0.001#0.005#0.03
 		
 	sleep(t)
 
