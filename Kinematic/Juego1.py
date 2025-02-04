@@ -201,13 +201,16 @@ class gaming1(object):
 		# sine wave
 		if vars.pause:
 			# ~ vars.stepb = 0
-			yPos = (-1 * math.sin(0) * (self.AMPLITUDE2*(self.AMPLITUDE/100)))-1
+			yPos = (-1 * math.sin(0) * (self.AMPLITUDE2*(self.AMPLITUDE/100)))+ abs(ce-self.WIN_CENTERY)-1
 
 			self.posRecord['sin'].append((int(self.xPos), int(yPos) + self.WIN_CENTERY))
 			# ~ self.posRecord['sin'].append((int(self.xPos)+self.xPos2, int(yPos) + self.WIN_CENTERY))
 
 		else:
-			yPos = -1 * math.sin(vars.stepb) * (self.AMPLITUDE2*(self.AMPLITUDE/100))
+			if vars.stepb < math.pi:
+				yPos = (-1 * math.sin(vars.stepb) * (yPosup*(self.AMPLITUDE/100))) + abs(ce-self.WIN_CENTERY)
+			else:
+				yPos = (-1 * math.sin(vars.stepb) * (yPosdo*(self.AMPLITUDE/100))) + abs(ce-self.WIN_CENTERY)
 			# ~ if vars.stepb < 1 : #PB2025
 				# ~ ypos = 0
 			self.posRecord['sin'].append((int(self.xPos), int(yPos) + self.WIN_CENTERY))
