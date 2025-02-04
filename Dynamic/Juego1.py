@@ -198,20 +198,31 @@ class gaming1(object):
 		self.AMPLITUDE = vars.AMPLITUDE
 		self.AMPLITUDE2 = 150 ##########150 up and down in 100%
 		self.xPos2 = 700
-		# sine wave
+		val50 = (vars.valup+vars.valdo)/2.0
+		valme = ((self.AMPLITUDE2*vars.factor)/abs(vars.valup -val50))*(vars.valme-val50)
+		ce=self.WIN_CENTERY-int(valme)
+		up=self.WIN_CENTERY-self.AMPLITUDE2
+		do=self.WIN_CENTERY+self.AMPLITUDE2
+		yPosup = abs(ce-up)#*(self.AMPLITUDE/100))
+		yPosdo = abs(do-ce)#*(self.AMPLITUDE/100))
+		
 		if vars.pause:
 			# ~ vars.stepb = 0
-			yPos = (-1 * math.sin(0) * (self.AMPLITUDE2*(self.AMPLITUDE/100)))-1
+			yPos = (-1 * math.sin(0) * (self.AMPLITUDE2*(self.AMPLITUDE/100)))+ abs(ce-self.WIN_CENTERY)-1
 
 			self.posRecord['sin'].append((int(self.xPos), int(yPos) + self.WIN_CENTERY))
 			# ~ self.posRecord['sin'].append((int(self.xPos)+self.xPos2, int(yPos) + self.WIN_CENTERY))
 
 		else:
-			yPos = -1 * math.sin(vars.stepb) * (self.AMPLITUDE2*(self.AMPLITUDE/100))
-			# ~ if vars.stepb < 1 :
+			if vars.stepb < math.pi:
+				yPos = (-1 * math.sin(vars.stepb) * (yPosup*(self.AMPLITUDE/100))) + abs(ce-self.WIN_CENTERY)
+			else:
+				yPos = (-1 * math.sin(vars.stepb) * (yPosdo*(self.AMPLITUDE/100))) + abs(ce-self.WIN_CENTERY)
+			# ~ if vars.stepb < 1 : #PB2025
 				# ~ ypos = 0
 			self.posRecord['sin'].append((int(self.xPos), int(yPos) + self.WIN_CENTERY))
 			# ~ self.posRecord['sin'].append((int(self.xPos)+self.xPos2, int(yPos) + self.WIN_CENTERY))
+
 		if vars.showSine:
 			# draw the sine ball and label
 			pygame.draw.circle(vars.screen, self.RED, (int(self.xPos2), int(yPos) + self.WIN_CENTERY), 13)

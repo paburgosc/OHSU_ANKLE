@@ -199,6 +199,14 @@ class gaming1(object):
 		self.AMPLITUDE2 = 150 ##########150 up and down in 100%
 		self.xPos2 = 700
 		# sine wave
+		val50 = (vars.valup+vars.valdo)/2.0
+		valme = ((self.AMPLITUDE2*vars.factor)/abs(vars.valup -val50))*(vars.valme-val50)
+		ce=self.WIN_CENTERY-int(valme)
+		up=self.WIN_CENTERY-self.AMPLITUDE2
+		do=self.WIN_CENTERY+self.AMPLITUDE2
+		yPosup = abs(ce-up)#*(self.AMPLITUDE/100))
+		yPosdo = abs(do-ce)#*(self.AMPLITUDE/100))
+		
 		if vars.pause:
 			# ~ vars.stepb = 0
 			yPos = (-1 * math.sin(0) * (self.AMPLITUDE2*(self.AMPLITUDE/100)))+ abs(ce-self.WIN_CENTERY)-1
