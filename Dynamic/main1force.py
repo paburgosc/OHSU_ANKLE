@@ -102,7 +102,7 @@ vars.nombre = (name +"_"+ date1[0:2] + date1[3:5] + date1[6:10] + time1[0:2] + t
 #~ vars.nombre = raw_input("nombre_EDF: ").replace('\r', '')
 vars.f0 = open('./files/'+vars.nombre+'calibracion.txt','a')
 vars.f1 = open('./files/'+vars.nombre+'juego1.txt','a', newline='')
-vars.f2 = open('./files/'+vars.nombre+'juego2.txt','a', newline='')
+vars.f2 = open('./files/'+vars.nombre+'juego2.txt','a')
 vars.f3 = open('./files/'+vars.nombre+'juego3.txt','a', newline='')
 
 white = (255,255,255)
