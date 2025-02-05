@@ -28,6 +28,8 @@ class gaming1(object):
 		self.WIN_CENTERY = int(self.WINDOWHEIGHT / 2) # the midpoint for the height of the window
 
 		#FPS = vars.fpsLimit # frames per second to run at
+		self.data_list1 = [["game","difficulty", "amplitude", "velocity", "time","xpos","y_computer","y_human","y_error","trial","x","y","z"]]
+		# ~ self.ffs1 = 1
 
 
 		with open(vars.archivo) as csv_file:
@@ -162,6 +164,11 @@ class gaming1(object):
 		
 		# ~ return anglesroll,anglespitch,anglesyaw
 
+	def save_to_csv(self, data):
+		# ~ with open(filename, mode='w', newline='') as file:
+		writer = csv.writer(vars.f1)
+		writer.writerows(data)
+		print("Data saved")
 
 	def main(self):
 		# ~ timeg1 = vars.time-vars.timeonset
@@ -375,7 +382,12 @@ class gaming1(object):
 						self.count2 = 1
 						if self.contador in [10,20,30,40,50,60,70,80,90,100,110]:
 							self.blocktimes.append((vars.time-self.inittime)/1000)
-							vars.f1.write("Pausa_juego1" +'\t'+ vars.gameLevel +'\t'+ str(vars.AMPLITUDE)  +'\t'+  str(vars.step) +'\t'+(str(vars.time))+'\t'+(str(self.xPos2))+'\t'+(str(ysin)) + '\t'+(str(yimu))+'\t'+(str(yimu-ysin))+'\t'+(str(self.contador))+'\t'+(str(vars.x1))+'\t'+(str(vars.y1))+'\t'+(str(vars.z1))+'\n') ##PB 27 12 19
+							self.data_list1.append(["Pausa_juego1",vars.gameLevel,str(vars.AMPLITUDE),str(vars.step) ,(str(vars.time)),(str(self.xPos2)),(str(ysin)),(str(yimu)),(str(yimu-ysin)),(str(-1)),(str(vars.x1)),(str(vars.y1)),(str(vars.z1))])
+							self.save_to_csv(self.data_list1)
+							print("saving data")
+							self.data_list1 = []
+
+							# ~ vars.f1.write("Pausa_juego1" +'\t'+ vars.gameLevel +'\t'+ str(vars.AMPLITUDE)  +'\t'+  str(vars.step) +'\t'+(str(vars.time))+'\t'+(str(self.xPos2))+'\t'+(str(ysin)) + '\t'+(str(yimu))+'\t'+(str(yimu-ysin))+'\t'+(str(self.contador))+'\t'+(str(vars.x1))+'\t'+(str(vars.y1))+'\t'+(str(vars.z1))+'\n') ##PB 27 12 19
 							print(str(self.contador)+" repeticiones")
 							print(str((vars.time-self.inittime)/1000)+" segundos")
 							vars.pause = True
@@ -413,8 +425,8 @@ class gaming1(object):
 					
 				if self.countsin == 1:		
 					self.countsin2 += 1
-					
-				vars.f1.write("juego1" +'\t'+ vars.gameLevel +'\t'+ str(vars.AMPLITUDE)  +'\t'+  str(vars.step) +'\t'+(str(vars.time))+'\t'+(str(self.xPos2))+'\t'+(str(ysin)) + '\t'+(str(yimu))+'\t'+(str(yimu-ysin))+'\t'+(str(self.contador))+'\t'+(str(vars.x1))+'\t'+(str(vars.y1))+'\t'+(str(vars.z1))+'\n') ##PB 27 12 19
+				self.data_list1.append(["juego1" , vars.gameLevel , str(vars.AMPLITUDE)  ,  str(vars.step) ,(str(vars.time)),(str(self.xPos2)),(str(ysin)) ,(str(yimu)),(str(yimu-ysin)),(str(self.contador)),(str(vars.x1)),(str(vars.y1)),(str(vars.z1))])
+				# ~ vars.f1.write("juego1" +'\t'+ vars.gameLevel +'\t'+ str(vars.AMPLITUDE)  +'\t'+  str(vars.step) +'\t'+(str(vars.time))+'\t'+(str(self.xPos2))+'\t'+(str(ysin)) + '\t'+(str(yimu))+'\t'+(str(yimu-ysin))+'\t'+(str(self.contador))+'\t'+(str(vars.x1))+'\t'+(str(vars.y1))+'\t'+(str(vars.z1))+'\n') ##PB 27 12 19
 					
 				# ~ print(self.xPos)
 
