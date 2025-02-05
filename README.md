@@ -4,7 +4,7 @@ kinematics and Dynamics
 Prerequisites
 Make sure you have the following installed before running the application:
 
-Python (Python version 3.6)
+Python (Python version 3.6.6)
 
 Installation
 Clone the repository or download the source code:
