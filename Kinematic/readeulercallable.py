@@ -14,7 +14,7 @@ import json
 print('mac_sensor1 = D7:24:48:BE:AC:CA')
 print('mac_sensor2  = E7:87:02:27:25:7F')
 print('mac_sensor3  = E3:A9:46:B7:FB:F3')
-print('mac_sensor3  = FC:3C:22:7C:59:B5')
+print('mac_sensor4  = FC:3C:22:7C:59:B5')
 
 
 
