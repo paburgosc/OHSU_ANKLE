@@ -129,8 +129,8 @@ class Pane(object):
 		#setup clock
 		vars.clock = pygame.time.Clock()
 		# ~ vars.screen = pygame.display.set_mode((vars.width,vars.height), FULLSCREEN |DOUBLEBUF |RLEACCEL,32)
-		vars.screen = pygame.display.set_mode((vars.width,vars.height), RESIZABLE |DOUBLEBUF ,32)
-		# ~ vars.screen = pygame.display.set_mode((vars.width,vars.height), DOUBLEBUF , 32)
+		# ~ vars.screen = pygame.display.set_mode((vars.width,vars.height), RESIZABLE |DOUBLEBUF ,32)
+		vars.screen = pygame.display.set_mode((vars.width,vars.height), DOUBLEBUF , 32)
 		vars.screen.fill((white))
 		# ~ calibracion.init()
 		
