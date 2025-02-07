@@ -7,7 +7,7 @@ def startGame(width, height, caption):
     #setup pygame
     pygame.init()
     pygame.font.init()
-    pygame.mixer.init()
+    # pygame.mixer.init()
     # ~ joystick = pygame.joystick.Joystick(0)
     # ~ joystick.init()
 
