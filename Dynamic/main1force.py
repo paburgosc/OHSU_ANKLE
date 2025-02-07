@@ -128,8 +128,8 @@ class Pane(object):
 		pygame.display.set_caption(vars.caption)
 		#setup clock
 		vars.clock = pygame.time.Clock()
-		# ~ vars.screen = pygame.display.set_mode((width, height), FULLSCREEN |DOUBLEBUF |RLEACCEL,32)
-		vars.screen = pygame.display.set_mode((vars.width,vars.height), DOUBLEBUF , 32)
+		vars.screen = pygame.display.set_mode((width, height), FULLSCREEN |DOUBLEBUF |RLEACCEL,32)
+		# ~ vars.screen = pygame.display.set_mode((vars.width,vars.height), DOUBLEBUF , 32)
 		vars.screen.fill((white))
 		# ~ calibracion.init()
 		
