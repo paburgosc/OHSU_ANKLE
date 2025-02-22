@@ -113,7 +113,7 @@ class gaming1(object):
 		self.sinLabelRect = self.sinLabelSurf.get_rect()
 
 
-		self.instructionsSurf = self.fontObj.render('S oculta, P pausa, Flechas AB agrandan, FLECHAS DI aceleran, AZ offset', True, self.BLACK, self.BGCOLOR)
+		self.instructionsSurf = self.fontObj.render('Esc menu, P pause', True, self.BLACK, self.BGCOLOR)
 		self.instructionsRect = self.instructionsSurf.get_rect()
 		self.instructionsRect.left = 10
 		self.instructionsRect.bottom = self.WINDOWHEIGHT - 10
