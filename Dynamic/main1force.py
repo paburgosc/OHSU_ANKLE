@@ -47,7 +47,7 @@ print("Server not connected")
   # ~ # displaying the contents of the CSV file
   # ~ for lines2 in csvFile2:
         # ~ print(lines2)
-name1 = input("Enter Participant ID (e.g. ANKLE_101,102,... for young HC, ANKLE_201,202... for older HC, ANKLE_301,302,..)  :")
+name1 = input("Enter Participant ID (e.g. ANKLE_101,102,... for PD, ANKLE_201,202... for older HC, Participant_0001,0002,..for young HC) :")
 
 name2 = input("Enter  the side information (R or L) :")
 
