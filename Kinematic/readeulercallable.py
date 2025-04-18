@@ -17,12 +17,13 @@ import json
 if socket.gethostname()=="raspberrypi":
 	name = 3
 elif socket.gethostname()=="raspberrypi2":
-	name = 4
+	name = 5
 else:
 	print('mac_sensor1 = D7:24:48:BE:AC:CA')
 	print('mac_sensor2  = E7:87:02:27:25:7F')
 	print('mac_sensor3  = E3:A9:46:B7:FB:F3')
-	print('mac_sensor4  = F8:6A:C8:82:37:8D')	
+	print('mac_sensor4  = F8:6A:C8:82:37:8D')
+	print('mac_sensor5  = D8:03:36:6B:92:1E')
 	name = input("ingresa el numero de sensor que quieres usar, ej. 7:")
 # ~ name = 1
 HOST = '127.0.0.1'  # The server's hostname or IP address
@@ -129,6 +130,9 @@ mac_sensor.append('D7:24:48:BE:AC:CA')
 mac_sensor.append('E7:87:02:27:25:7F')
 mac_sensor.append('E3:A9:46:B7:FB:F3')
 mac_sensor.append('F8:6A:C8:82:37:8D')
+mac_sensor.append('D8:03:36:6B:92:1E')
+
+
 
 
 # ~ sensores = [mac_sensor1, mac_sensor2, mac_sensor3, mac_sensor4]
